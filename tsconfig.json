@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "sourceMap": false,
+    "strict": true,
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": [
+    "./**/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.js",
+    "*.config.js",
+    "./src/renderer/**/*"
+  ]
+}
