@@ -1,0 +1,107 @@
+{
+  "name": "dental-oe",
+  "version": "0.0.1-alpha.1",
+  "description": "Desktop application for a dental office.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "electron src/app.js",
+    "dev": "cross-env NODE_ENV=local electron src/app.js",
+    "tsc": "tsc --project ./",
+    "vite": "vite build",
+    "test": "jest",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "native": "electron-rebuild -f -w better-sqlite3",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Itzdan0ul/dental-oe.git"
+  },
+  "keywords": [
+    "dental"
+  ],
+  "author": "Itzdan0ul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Itzdan0ul/dental-oe/issues"
+  },
+  "homepage": "https://github.com/Itzdan0ul/dental-oe#readme",
+  "dependencies": {
+    "better-sqlite3": "^9.2.2",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "moment": "^2.29.4",
+    "sweetalert2": "^11.10.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "jest": "^29.7.0",
+    "sass": "^1.69.5",
+    "vite": "^5.0.10",
+    "vue": "^3.3.12",
+    "vue-router": "^4.2.5",
+    "vuex": "^4.1.0"
+  },
+  "build": {
+    "appId": "com.itzdan0ul.dentaloe",
+    "productName": "DentalOE",
+    "copyright": "Copyright © 2023 Itzdan0ul",
+    "directories": {
+      "output": "build/release"
+    },
+    "asar": true,
+    "npmRebuild": true,
+    "files": [
+      "!**/renderer/**/*.scss",
+      "!**/renderer/**/*.vue",
+      "!**/renderer/assets",
+      "!**/renderer/store",
+      "!**/renderer/router",
+      "!**/renderer/components",
+      "!**/renderer/index.html",
+      "!**/renderer/main.js",
+      "!.vscode",
+      "!.github",
+      "!README.md",
+      "!SECURITY.md",
+      "!SECURITY_es-MX.md",
+      "!vite.config.js",
+      "!test",
+      "!scripts",
+      "!tsconfig.json",
+      "!src/**/*.ts",
+      "!.prettierignore",
+      "!.prettierrc",
+      "!docs",
+      "!.env.development",
+      "!.env.local"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallDisplayName": "DentalOE",
+      "license": "LICENSE",
+      "artifactName": "DentalOE-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": true,
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": 3082,
+      "unicode": true,
+      "runAfterFinish": false,
+      "createDesktopShortcut": true
+    }
+  }
+}

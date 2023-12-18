@@ -1,0 +1,54 @@
+@charset 'UTF-8';
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'Segoe UI';
+  font-size: 16px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.app {
+  display: grid;
+  height: 100vh;
+}
+
+@media (max-width: 1366px) and (min-width: 769px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1365px) and (min-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     background: $layoutBackgroundPrimaryDark;
+//   }
+
+//   button {
+//     color: $textColorPrimaryDark;
+//   }
+// }
