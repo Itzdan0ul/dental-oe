@@ -7,6 +7,8 @@ const allowedChannels: Array<string> = [
   'expedient:delete',
   'login',
   'logout',
+  'medicalFile:fetch',
+  'medicalFile:create',
   'patient:fetch',
   'patient:create',
   'patient:update',

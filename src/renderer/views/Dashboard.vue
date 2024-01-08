@@ -11,7 +11,7 @@
   const changeSection = (newSection) => {
     console.log(newSection);
     section.value = newSection;
-    
+
     router.push(`/dashboard/${newSection}`);
   };
 
@@ -118,7 +118,8 @@
             >Citas</button
           >
         </div>
-        <button
+        <div class="dashboard__buttons">
+          <button
             class="dashboard__add-btn"
             title="Generar Expediente"
             role="button"
@@ -127,7 +128,6 @@
           >
             <img src="../assets/images/folder.svg" alt="Icono de un folder." />
           </button>
-        <div class="dashboard__buttons">
           <button
             class="dashboard__add-btn"
             title="Agregar paciente"

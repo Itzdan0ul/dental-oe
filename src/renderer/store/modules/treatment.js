@@ -10,8 +10,6 @@ const actions = {
   async getTreatments({ commit }) {
     const treatments = await window.electronAPI.invoke('treatment:fetch');
     
-    console.log(treatments);
-
     commit('setTreatments', treatments);
   },
 };

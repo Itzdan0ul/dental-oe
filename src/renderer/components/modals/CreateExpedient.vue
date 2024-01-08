@@ -44,8 +44,6 @@
       treatmentId: document.querySelector('#treatments').selectedOptions[0].getAttribute('data-id'),
     };
 
-    console.log(expedient);
-
     const result = await window.electronAPI.invoke('expedient:create', expedient);
 
     if (result) {

@@ -10,8 +10,6 @@ const actions = {
   async getExpedients({ commit }) {
     const expedients = await window.electronAPI.invoke('expedient:fetch');
 
-    console.log('Expedients fetched from DB: ', expedients);
-
     commit('setExpedients', expedients);
   },
 };

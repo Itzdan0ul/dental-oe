@@ -18,6 +18,7 @@ class MainWindow extends BrowserWindow {
         enableWebSQL: false,
         preload: PRELOAD_FILE,
         contextIsolation: true,
+        webSecurity: false,
       },
     });
 

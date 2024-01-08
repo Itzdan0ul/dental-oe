@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `expedient`(
   CONSTRAINT `expedient_treatment_id_fk` FOREIGN KEY (`treatment_id`) REFERENCES `treatment`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS `radiography`(
+CREATE TABLE IF NOT EXISTS `medical_file`(
   `id` INTEGER NOT NULL,
   `name` TEXT NOT NULL,
-  `link` TEXT NULL,
+  `path` TEXT NOT NULL,
   `expedient_id` INTEGER NOT NULL,
   `created_at` DATE DEFAULT (DATETIME('now', 'localtime')),
   `updated_at` DATE NULL,
