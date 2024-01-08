@@ -49,7 +49,7 @@
     const result = await window.electronAPI.invoke('expedient:create', expedient);
 
     if (result) {
-      await store.dispatch('treatment/getTreatments');
+      await store.dispatch('expedient/getExpedients');
       closeModal();
     }
   };

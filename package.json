@@ -1,6 +1,6 @@
 {
   "name": "dental-oe",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-beta.1",
   "description": "Desktop application for a dental office.",
   "main": "src/app.js",
   "scripts": {

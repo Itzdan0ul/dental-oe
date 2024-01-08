@@ -5,12 +5,16 @@ export const getExpedients = async (): Promise<Array<Expedient>> => {
     const connection: DatabaseConnection = new DatabaseConnection();
 
     const query: string = `SELECT
-                            id,
-                            number,
-                            treatment_id,
-                            created_at AS createdAt,
-                            updated_at AS updatedAt
-                            FROM expedient;`;
+                              expedient.id,
+                              number,
+                              treatment.type AS treatmentType,
+                              treatment.status,
+                              patient.name AS patientName,
+                              expedient.created_at AS createdAt,
+                              expedient.updated_at AS updatedAt
+                            FROM expedient
+                              JOIN treatment ON treatment.id = expedient.treatment_id
+                              JOIN patient ON patient.id = treatment.patient_id;`;
 
     const expedients: Array<Expedient> = connection.executeQuery(query);
 
