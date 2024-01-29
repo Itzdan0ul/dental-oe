@@ -10,6 +10,8 @@ const actions = {
   async getMedicalFiles({ commit }, expedientId) {
     const medicalFiles = await window.electronAPI.invoke('medicalFile:fetch', expedientId);
 
+    console.log(medicalFiles);
+
     commit('setMedicalFiles', medicalFiles);
   },
 };

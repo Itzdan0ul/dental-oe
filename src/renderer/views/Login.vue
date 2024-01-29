@@ -6,6 +6,11 @@
   const password = ref('');
 
   onMounted(async () => {
+    // const response = await fetch('app://assets/images/close.svg');
+
+    // response.blob().then(console.log);
+
+    // document.getElementById('patito').src = response.url;
     users.value = await window.electronAPI.invoke('user:fetch');
   });
 

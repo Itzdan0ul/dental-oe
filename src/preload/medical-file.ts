@@ -1,4 +1,3 @@
-import path from 'path';
 import fs from 'fs-extra';
 import { dialog, ipcMain } from 'electron';
 import MainWindow from '../main/window/MainWindow';
@@ -23,7 +22,7 @@ ipcMain.handle('medicalFile:create', async (_, expedientId: number): Promise<boo
     return false;
   }
 
-  fs.moveSync(response.filePaths[0], `${FILES_DIR}${response.filePaths[0].split('\\').pop()!}`, { overwrite: true });
+  fs.copySync(response.filePaths[0], `${FILES_DIR}${response.filePaths[0].split('\\').pop()!}`, { overwrite: true });
 
   const { createMedicalFile } = await import('../main/app/database/managers/medical-file');
 

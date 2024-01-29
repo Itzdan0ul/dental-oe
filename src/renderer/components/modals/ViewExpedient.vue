@@ -12,7 +12,7 @@
     },
   });
 
-  onMounted(() => {
+  onMounted(async () => {
     store.dispatch('medicalFile/getMedicalFiles', props.expedient.id);
   });
 
@@ -46,7 +46,7 @@
         <div class="view-expedient__files">
           <div class="view-expedient__file" v-for="(medicalFile, i) in medicalFiles" :key="i">
             <img class="view-expedient__file-image"
-              :src="medicalFile.path"
+              :src="'app://' + medicalFile.path.replace(/\\/g, '/')"
               :alt="medicalFile.name"
               :title="`Nombre: ${medicalFile.name}
                        Ruta: ${medicalFile.path}

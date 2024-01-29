@@ -50,7 +50,7 @@
           class="home__card-btn"
           type="button"
           role="button"
-          title="Cargar Radiografía"
+          title="Cargar archivo"
           @click="openViewExpedientModal(expedient)"
         >
           Ver
@@ -62,8 +62,9 @@
 
 <style scoped>
   .home {
-    place-content: center;
     display: grid;
+    gap: 1.25em;
+    place-content: center;
   }
 
   .home__card {

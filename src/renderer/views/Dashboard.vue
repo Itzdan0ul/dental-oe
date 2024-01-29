@@ -9,7 +9,6 @@
   const selectedModal = ref(null);
 
   const changeSection = (newSection) => {
-    console.log(newSection);
     section.value = newSection;
 
     router.push(`/dashboard/${newSection}`);
@@ -20,7 +19,7 @@
   };
 
   const getHelp = () => {
-    window.electronAPI.send('help');
+    window.electronAPI.send('get-help');
   };
 
   const logout = () => {
@@ -37,6 +36,9 @@
   </template>
   <template v-if="selectedModal === 'create-treatment'">
     <Modal.CreateTreatment @toggle-modal="(showModal) => (selectedModal = showModal)" />
+  </template>
+  <template v-if="selectedModal === 'create-appointment'">
+    <Modal.CreateAppointment @toggle-modal="(showModal) => (selectedModal = showModal)" />
   </template>
   <div class="dashboard">
     <menu class="dashboard__menu">
@@ -146,7 +148,7 @@
           >
             <img src="../assets/images/treatment.svg" alt="Icono de un diagnostico." />
           </button>
-          <button class="dashboard__add-btn" title="Crear cita" role="button" v-show="section === 'appointments'">
+          <button class="dashboard__add-btn" title="Crear cita" role="button" v-show="section === 'appointments'" @click="openModal('create-appointment')">
             <img src="../assets/images/appointment.svg" alt="Icono de un calendario con un punto." />
           </button>
         </div>

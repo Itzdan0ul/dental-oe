@@ -1,6 +1,11 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
 
 const allowedChannels: Array<string> = [
+  'appointment:fetch',
+  'appointment:create',
+  'appointment:update',
+  'appointment:delete',
+  'get-help',
   'expedient:fetch',
   'expedient:create',
   'expedient:update',

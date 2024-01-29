@@ -5,6 +5,14 @@ input {
   }
 }
 
+textarea {
+  &:hover {
+    box-shadow: 0 0 0 0.25rem rgb(45 54 109 / 50%);
+    transition: .3s ease-in-out;
+  }
+}
+
+
 select {
   &:hover {
     box-shadow: 0 0 0 0.25rem rgb(45 54 109 / 50%);

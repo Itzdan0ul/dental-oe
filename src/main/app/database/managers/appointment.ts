@@ -7,8 +7,8 @@ export const getAppointments = async (): Promise<Array<Appointment>> => {
     const query: string = `SELECT 
                             appointment.id, 
                             appointment.date, 
-                            appointment.time, 
-                            appointment.status, 
+                            appointment.hour, 
+                            appointment.description,
                             patient.name AS patientName,
                             appointment.created_at AS createdAt, 
                             appointment.updated_at AS updated_at 
@@ -27,7 +27,7 @@ export const createAppointment = async (appointment: Appointment): Promise<boole
   try {
     const connection: DatabaseConnection = new DatabaseConnection();
 
-    const query: string = `INSERT INTO appointment (date, time, status, patient_id) VALUES (@date, @time, @status, @patientId);`;
+    const query: string = `INSERT INTO appointment (date, hour, description, patient_id) VALUES (@date, @hour, @description, @patientId);`;
 
     connection.executeNonQuery(query, appointment);
 
@@ -41,7 +41,7 @@ export const updateAppointment = async (appointment: Appointment): Promise<boole
   try {
     const connection: DatabaseConnection = new DatabaseConnection();
 
-    const query: string = `UPDATE appointment SET date = @date, time = @time, status = @status WHERE id = @id;`;
+    const query: string = `UPDATE appointment SET date = @date, hour = @hour, description = @description WHERE id = @id;`;
 
     connection.executeNonQuery(query, appointment);
 

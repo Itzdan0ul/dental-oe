@@ -22,6 +22,8 @@ const initApp = (): void => {
   new App().init();
 
   protocol.handle('app', (request: Request): any => {
+    console.log(request.url);
+    console.log('file://' + request.url.slice('app://'.length));
     return net.fetch('file://' + request.url.slice('app://'.length), { headers: request.headers, method: request.method });
   });
 };
@@ -51,7 +53,7 @@ const startApp = (): void => {
       scheme: 'app',
       privileges: {
         secure: true,
-        standard: true,
+        standard: false,
         supportFetchAPI: true,
       },
     },
